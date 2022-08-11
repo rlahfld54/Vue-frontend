@@ -17,10 +17,12 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
+
 export default {
   created () {
     // 컴포넌트가 생성될 때, /api/movies에 요청을 보냅니다.          
-    this.$http.get('/api/movies')
+    axios.get('/api/movies')
         .then((response) => {
           this.movies = response.data;
           console.log(response);
